@@ -1,0 +1,53 @@
+<template name="details">
+    <div class="container" style="padding: 16px;">
+        <div class="card">
+            <div class="card-content">
+                {{#with departInfo}}
+                    <span class="is-4 title">{{operatingCarrier.airline}} {{operatingCarrier.airlineCode}}{{operatingCarrier.flightNumber}}</span>
+                    <span class="is-6 subtitle">Gate {{gate}}, Terminal {{terminal}}</span><br/><br/>
+                    Flying from {{city}} to {{flightInfo.airportCode}}.
+
+                    Arrival at {{parseDate estimated}}.
+                {{/with}}
+            </div>
+        </div>
+
+        <br/>
+
+        <div class="is-fullwidth">
+            <div class="field has-addons is-fullwidth">
+                <p class="control is-fullwidth">
+                    <input class="input is-fullwidth" {{b "value: destinationAddress"}} placeholder="Hotel Address"/>
+                </p>
+                <p class="control">
+                    <a class="button is-black" {{b "click: findUbers, class: {'is-loading': uberLoading}"}}>Find Ubers</a>
+                </p>
+            </div>
+
+            {{#with geocodedAirport}}
+                <b>From:</b> {{name}}, {{formatted_address}}
+            {{/with}}
+
+            <br/>
+
+            {{#with geocodedDestination}}
+                <b>To: </b> {{name}}, {{formatted_address}}
+            {{/with}}
+
+            <br/><br/>
+
+            {{#each ubers}}
+                <input type="radio" value="{{display_name}} " {{b "group: chosenUbers"}}/>
+                <label>{{localized_display_name}}
+                    ({{currency_code}}{{estimate}}; {{distance}}km for {{parseDuration duration}} minutes)</label><br/>
+            {{/each}}
+
+            <br/>
+
+            {{#if ubers}}
+                <a class="button is-black" {{b "click: releaseWorries"}}>Release me of my worries</a>
+            {{/if}}
+
+        </div>
+    </div>
+</template>

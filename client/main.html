@@ -1,0 +1,35 @@
+<head>
+    <link rel="icon" href="/images/logo.jpg">
+    <title>Uberkraft</title>
+</head>
+
+<template name="main">
+    <section class="hero">
+
+        <div class="hero-head">
+            <nav class="nav has-shadow custom-nav">
+                <div class="nav-left">
+
+                    <span class="nav-item">
+                        Welcome, Kenta.
+                    </span>
+                </div>
+
+                <span class="nav-toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                <div class="nav-right nav-menu">
+                    <a class="nav-item" href="/">
+                        <div class="button is-black"><i class="fa fa-home" style="font-size: 16px;"></i></div>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <section style="height: calc(100% - 50px);">
+        {{> Template.dynamic template=content}}
+    </section>
+</template>

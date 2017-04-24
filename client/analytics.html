@@ -1,0 +1,71 @@
+<template name="analytics">
+    <div class="container" style="padding: 16px">
+        <span class="content">
+            <div class="card">
+                <div class="card-content">
+                    {{#with ticket}}
+                        <span class="is-4 title">{{flightDetails.operatingCarrier.airline}} {{flightDetails.operatingCarrier.airlineCode}}{{flightNumber}}</span>
+                        <span class="is-6 subtitle">Gate {{flightDetails.gate}}
+                            , Terminal {{flightDetails.terminal}}</span><br/><br/>
+                        Flying from {{flightDetails.city}} to {{airport}}.
+                        Arrival at {{parseDate flightDetails.estimated}}.<br/>
+                        <b>Destination:</b> {{end.address}}
+                    {{/with}}
+                </div>
+            </div>
+            <br/>
+
+            <div class="card">
+                <div class="card-content">
+
+                        <span class="is-4 title">Real-time Uber Data w/ Surge Factor</span>
+                        <span class="is-6 subtitle">Last updated {{uberLastUpdated}}</span><br/><br/>
+
+                    {{#with ticket}}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    {{#each currentUberDistances}}
+                                        <td>{{display_name}}</td>
+                                    {{/each}}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    {{#each currentUberDistances}}
+                                        <td>{{parseDuration estimate}} minutes to airport</td>
+                                    {{/each}}
+                                </tr>
+                                <tr>
+                                    {{#each currentUberPrices}}
+                                        <td>approx. {{currency_code}}{{estimate}}</td>
+                                    {{/each}}
+                                </tr>
+                            </tbody>
+                        </table>
+                    {{/with}}
+                </div>
+            </div>
+            <br/>
+
+            <div class="columns">
+                <div class="column">
+<i class="fa fa-location-arrow" style="padding-right: 16px;"></i> <span>{{ticket.steps}} step(s) were taken within the airport.</span><a class="button is-black is-small" {{b "click: resetSteps"}} style="margin-left: 32px;">Demo</a><br/><br/>
+            <i class="fa fa-car" style="padding-right: 16px;"></i> <span><b>{{ticket.ride.display_name}}</b> was chosen as the means of transportation originally for <b>{{ticket.ride.currency_code}}{{ticket.ride.estimate}}</b>.</span><br/>
+                </div>
+                <div class="column">
+                    <div class="columns">
+                        <div class="column">
+                            <div id="walkStage"></div>
+                        </div>
+                        <div class="column">
+                            <div id="securityStage"></div>
+                        </div>
+                    </div>
+                    <div id="uberStage"></div>
+                </div>
+            </div>
+
+        </span>
+    </div>
+</template>

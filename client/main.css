@@ -1,0 +1,228 @@
+@font-face {
+    font-family: 'latin_modern_roman10_regular';
+    src: url('/fonts/lmroman10-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    src: url('/fonts/proxima-nova-regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    src: url('/fonts/proxima-nova-bold.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Proxima Nova";
+    src: url('/fonts/proxima-nova-bold.otf');
+    font-weight: 700;
+    font-style: italic;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: "Proxima Nova", sans-serf !important;
+    background: #fff;
+}
+
+#__blaze-root {
+    height: 100%;
+}
+
+.footer {
+    padding: 40px 20px 40px !important;
+}
+
+#main {
+    padding: 16px;
+}
+
+#newsletter .input {
+    border-color: white;
+    box-shadow: none;
+}
+
+.nav.has-shadow {
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1) !important;
+}
+
+#progressChart {
+    height: 256px !important;
+    width: 256px !important;
+    margin: 0 auto;
+}
+
+.content .mc-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.latex-mc {
+    font-size: 1.2rem;
+}
+
+.latex-q {
+    font-size: 1.2rem;
+}
+
+/*
+    Up/Down vote
+*/
+.vote {
+    cursor: pointer;
+}
+
+.wrap{
+    margin-right: 1rem;
+    text-align: center;
+}
+
+.up {
+    color: green;
+}
+
+.down {
+    color: red;
+}
+
+.inactive {
+    color: gray;
+}
+
+.score {
+    position: relative;
+    display: block;
+    padding: 5px 0;
+}
+
+.badge {
+    background: #eee;
+    padding: 5px 10px;
+    border-radius: 30px;
+    position: absolute;
+    top: 0;
+    margin-left: 10px;
+}
+
+.questions {
+    font-family: "latin_modern_roman10_regular";
+}
+
+section .q-share {
+    font-size: 15px;
+}
+
+a:visited {
+    color: #1577c6 !important;
+}
+
+a {
+    border-bottom: 0 !important;
+}
+
+.rating-container {
+    padding: 0 1.5rem 0 1rem;
+    text-align: center;
+
+}
+
+.q-container {
+    display: flex;
+}
+
+.answers {
+    margin-top: 2rem;
+}
+
+.ans-comm-section {
+    font-family: Helvetica, sans-serif;
+}
+
+.question-container {
+    padding-top: 20px !important;
+}
+
+.custom-green {
+    border-left: 30px solid #6FE0B8;
+    border-right: 15px solid #6FE0B8;
+}
+
+.main-container {
+    border-left: 15px solid #6FE0B8;
+    border-right: 30px solid #6FE0B8;
+}
+
+.custom-nav {
+    padding: 0 10px;
+}
+
+.nav-menu a, .nav-menu a:visited {
+    color: #6FE0B8 !important;
+}
+
+.up {
+    color: gray;
+}
+
+.voteActive {
+    color: green;
+}
+
+.voteDownActive {
+    color :red;
+}
+
+.student-avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.student-avatar + div{
+    display:inline-block;
+    vertical-align: bottom;
+    line-height: 50px;
+    margin-left: 1rem;
+}
+
+.avatar-name {
+    font-weight: 600;
+}
+
+.classroom-list li {
+    padding: 1rem;
+}
+
+.classroom-list{
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.classroom-container {
+    border-left: 30px solid #6FE0B8;
+    border-right: 30px solid #6FE0B8;
+    margin-top: 0px !important;
+}
+
+.assessment-dd-label {
+    color: #6FE0B8;
+    font-weight: 600;
+}
+
+.assessment-container li{
+    margin: 7px;
+    cursor: pointer;
+    list-style: none;
+}
+
+.assessment-container .fa {
+    font-size: 10px;
+}

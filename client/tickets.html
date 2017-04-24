@@ -1,0 +1,29 @@
+<template name="tickets">
+    <div class="container" style="padding: 16px;">
+        <div class="card">
+            <div class="card-content">
+                <span>Here are all of your plane tickets we've analyzed so far. Looking to optimize your next trip? Scan your travel passes w/ the app.</span>
+            </div>
+        </div>
+
+        <br/>
+
+        {{#each tickets}}
+            <div class="card">
+                <div class="card-header-title o">
+                    Flight {{airline}}{{flightNum}}: Trip to {{airport}}
+                </div>
+                <div class="card-content" style="margin-top: -16px;">
+                    <span class="subtitle is-5">Scanned at {{parseDate createdAt}}.</span><br/>
+                    <div style="margin-top: 8px;">
+                        <a class="button is-warning" href="/analytics/{{_id}}">Uberlytics</a>
+                        <a class="button is-black" {{b "click: selectTicket(this)"}}>Book an Uber</a>
+                    </div>
+
+                </div>
+            </div>
+            <br/>
+        {{/each}}
+    </div>
+
+</template>
